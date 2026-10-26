@@ -1,0 +1,5 @@
+{
+  "name": "decision-box",
+  "version": "0.1.0",
+  "description": "Claude asks for your call in the built-in question box, with an everyday story and a recommendation for every option."
+}

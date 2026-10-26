@@ -1,0 +1,11 @@
+{
+  "name": "claude-code-mods",
+  "owner": { "name": "screamyx" },
+  "plugins": [
+    {
+      "name": "decision-box",
+      "source": "./decision-box",
+      "description": "Claude asks for your call in the built-in question box, with an everyday story and a recommendation for every option."
+    }
+  ]
+}
