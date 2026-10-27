@@ -1,0 +1,6 @@
+{
+  "name": "usage-band",
+  "version": "0.1.0",
+  "description": "A row above the prompt with your Claude 5-hour and weekly limits, when they reset, how full the context is, and your Higgsfield credits.",
+  "types": "./types/index.d.ts"
+}
