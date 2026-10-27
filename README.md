@@ -13,20 +13,36 @@ In the desktop app the stories sit in a panel just above the box, so you can com
 
 The mod also tells Claude to use the box whenever it needs your input, and to hand questions up to the main agent when a subagent hits one.
 
+## usage-band
+
+A single row above the prompt box with the numbers you check before starting a long job:
+
+```
+Claude 5h 42% · resets in 2h 14m  |  Week 18% · resets in 3d 4h  |  Context 61%  |  Higgsfield 4,738.5 credits
+```
+
+- **Claude 5h and Week**: how much of your 5-hour and weekly subscription limit is used, and how long until each resets. These come with every reply from Claude, so a new session shows them after its first reply.
+- **Context**: how full this session's context window is. Updates after each turn.
+- **Higgsfield**: your credit balance, read from the Higgsfield connector when the session starts, every 5 minutes, and right after Claude uses a Higgsfield tool. It shows only when Higgsfield is connected in the app. Higgsfield does not report when credits refill, so only the balance is shown.
+
+A figure turns amber at 80% and red at 95%. Higgsfield turns amber under 500 credits and red under 100. On a narrow window the row switches to a short form (`5h 42% 2h14m | 7d 18% 3d4h | ctx 61% | HF 4.7k`).
+
 ## Install
 
-In the desktop app: click **+** next to the prompt box, then **Plugins**, **Add marketplace**, enter `screamyx/claude-code-mods`, then **Add plugin** and choose `decision-box`.
+In the desktop app: click **+** next to the prompt box, then **Plugins**, **Add marketplace**, enter `screamyx/claude-code-mods`, then **Add plugin** and choose the mod (`decision-box` or `usage-band`).
 
 At the prompt of a terminal session:
 
 ```
 /plugin install decision-box --marketplace screamyx/claude-code-mods
+/plugin install usage-band --marketplace screamyx/claude-code-mods
 ```
 
 From a shell:
 
 ```
 claude plugin install decision-box --marketplace screamyx/claude-code-mods
+claude plugin install usage-band --marketplace screamyx/claude-code-mods
 ```
 
 Answer `y` to add the marketplace, then pick the user scope so it applies to every session.
@@ -38,4 +54,6 @@ If this repository is private, your machine needs a git login for github.com fir
 ```
 claude plugin validate decision-box
 claude plugin test decision-box
+claude plugin validate usage-band
+claude plugin test usage-band
 ```
